@@ -18,9 +18,15 @@ exports.select = async (req,res) =>{
         data
     });
 }
+
+// .............................................
+//  For Running Data ...............
+
 exports.run = async (req,res) =>{
 
-    var data = await usermodel.findByIdAndUpdate(req.params.id,{status:'running'});
+    var id = req.params.id;
+
+    var data = await usermodel.findByIdAndUpdate(id ,{status:'running'});
 
     res.status(200).json({
         status: 'status Update',
@@ -37,9 +43,15 @@ exports.running = async (req,res) =>{
         data
     });
 }
+
+// .............................................
+//  For Pending Data ...............
+
 exports.pen = async (req,res) =>{
 
-    var data = await usermodel.findByIdAndUpdate(req.params.id,{status:'pending'});
+    var id = req.params.id;
+
+    var data = await usermodel.findByIdAndUpdate(id ,{status:'pending'});
 
     res.status(200).json({
         status: 'status Update',
@@ -56,9 +68,15 @@ exports.pending = async (req,res) =>{
         data
     });
 }
+
+// .............................................
+//  For Decline Data ...............
+
 exports.dec = async (req,res) =>{
 
-    var data = await usermodel.findByIdAndUpdate(req.params.id,{status:'decline'});
+    id = req.params.id;
+
+    var data = await usermodel.findByIdAndUpdate(id,{status:'decline'});
 
     res.status(200).json({
         status: 'status Update',
@@ -75,9 +93,15 @@ exports.decline = async (req,res) =>{
         data
     });
 }
+
+// .............................................
+//  For Completed Data ...............
+
 exports.com = async (req,res) =>{
 
-    var data = await usermodel.findByIdAndUpdate(req.params.id,{status:'completed'});
+    id = req.params.id;
+
+    var data = await usermodel.findByIdAndUpdate(id,{status:'completed'});
 
     res.status(200).json({
         status: 'status Update',
@@ -105,6 +129,7 @@ exports.delete = async (req,res) =>{
         data
     });
 }
+
 exports.update = async (req,res) =>{
 
     var data = await usermodel.findByIdAndUpdate(req.params.id,req.body);
